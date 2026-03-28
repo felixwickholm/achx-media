@@ -122,6 +122,7 @@ export default function Hero() {
             <motion.div key={s.slug} variants={scaleIn}>
               <Link
                 href={`/services/${s.slug}`}
+                prefetch={false}
                 className="px-4 py-2 text-sm font-medium rounded-full border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/[0.15] transition-colors duration-200"
               >
                 {s.title}

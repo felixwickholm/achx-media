@@ -33,7 +33,7 @@ const icons: Record<string, React.ReactNode> = {
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <motion.div variants={fadeUp}>
-      <Link href={`/services/${service.slug}`} className="block">
+      <Link href={`/services/${service.slug}`} prefetch={false} className="block">
         <div className="service-card rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 sm:p-8 h-full">
           <div className="w-14 h-14 rounded-xl bg-accent/[0.08] text-accent flex items-center justify-center mb-5 ring-1 ring-accent/[0.12]">
             {icons[service.icon]}

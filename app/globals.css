@@ -219,3 +219,36 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
+/* ─── Force visibility for motion components ──────────── */
+/* Framer-motion sets inline opacity:0 during SSR/hydration.
+   This ensures all page sections are always visible.        */
+
+.grain-overlay > section,
+.grain-overlay > section > div,
+.grain-overlay > section > div > div,
+.grain-overlay > footer,
+.grain-overlay > footer > div {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* ─── CSS Scroll Animations (replace framer-motion) ───── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+.animate-on-scroll {
+  animation: fade-up 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}

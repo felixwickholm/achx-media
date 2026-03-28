@@ -40,6 +40,7 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
+                    prefetch={false}
                     className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
                   >
                     {s.title}
