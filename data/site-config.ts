@@ -86,7 +86,7 @@ export const siteConfig = {
   hero: {
     headline: "Videos That Launch Products\nand Close Deals",
     subheadline:
-      "Video editing. Launch videos. AI avatars. One agency, three ways to grow your SaaS.",
+      "Launch videos & AI avatars. Two ways to grow your SaaS.",
     ctaPrimary: "Book a Free Call",
     ctaSecondary: "See Our Work",
   },
@@ -94,11 +94,12 @@ export const siteConfig = {
   // ─── Clients (logo bar) ──────────────────────────────────
   clients: [
     { name: "WicFlow", logo: "/logos/wicflow.svg" },
-    { name: "Kylra AI" },
-    { name: "Paybase" },
-    { name: "Docustream" },
-    { name: "Shipday" },
-    { name: "Taplio" },
+    { name: "Kylra AI", logo: "/logos/kylra.svg" },
+    { name: "Whop", logo: "/logos/whop.svg" },
+    { name: "Paybase", logo: "/logos/paybase.svg" },
+    { name: "Docustream", logo: "/logos/docustream.svg" },
+    { name: "Shipday", logo: "/logos/shipday.svg" },
+    { name: "Taplio", logo: "/logos/taplio.svg" },
   ] as ClientLogo[],
 
   // ─── Stats (numbers bar) ─────────────────────────────────
@@ -250,6 +251,7 @@ export const siteConfig = {
       title: "WicFlow AI Agency Promo",
       client: "WicFlow",
       videoFile: "/videos/wicflow-saas.mp4",
+      thumbnail: "/videos/wicflow-saas-thumb.jpg",
       service: "launch-videos",
       featured: true,
       result: "2x investors",
@@ -260,6 +262,7 @@ export const siteConfig = {
       title: "Kylra AI Launch Video",
       client: "Kylra AI",
       videoFile: "/videos/kylra-ai.mp4",
+      thumbnail: "/videos/kylra-ai-thumb.jpg",
       service: "launch-videos",
       featured: true,
       result: "2x signups",
@@ -270,6 +273,7 @@ export const siteConfig = {
       title: "AI Avatar Demo",
       client: "AchX Media",
       videoFile: "/videos/ai-avatar-demo.mp4",
+      thumbnail: "/videos/ai-avatar-demo-thumb.jpg",
       service: "ai-avatar",
       featured: true,
       result: "No camera needed",
@@ -281,8 +285,9 @@ export const siteConfig = {
       title: "Whop Platform Explainer",
       client: "Whop",
       videoFile: "/videos/whop.mp4",
+      thumbnail: "/videos/whop-thumb.jpg",
       service: "launch-videos",
-      featured: false,
+      featured: true,
       result: "350% CTR",
       description: "Compelling explainer that breaks down a complex platform into a clear, engaging story.",
     },
