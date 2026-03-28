@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useInitial } from "@/lib/use-in-view-animation";
 import {
   fadeUpBlur,
   fadeUpSubtle,
@@ -13,6 +14,7 @@ import BookCallButton from "@/components/ui/BookCallButton";
 import FloatingOrbs from "@/components/effects/FloatingOrbs";
 
 export default function CTASection() {
+  const initial = useInitial();
   return (
     <section className="relative py-16 sm:py-24 md:py-32 bg-[#08090a] overflow-hidden">
       <FloatingOrbs variant="dark" />
@@ -22,7 +24,7 @@ export default function CTASection() {
 
       <motion.div
         variants={staggerContainer(0.12)}
-        initial="hidden"
+        initial={initial}
         whileInView="visible"
         viewport={viewportOnce}
         className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center"

@@ -2,10 +2,12 @@
 
 import { motion } from "motion/react";
 import { fadeUpSubtle, staggerContainer, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig } from "@/data/site-config";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Testimonials() {
+  const initial = useInitial();
   // Don't render if no real testimonials
   if (
     siteConfig.testimonials.length === 0 ||
@@ -25,7 +27,7 @@ export default function Testimonials() {
 
         <motion.div
           variants={staggerContainer(0.1)}
-          initial="hidden"
+          initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-2 gap-4"

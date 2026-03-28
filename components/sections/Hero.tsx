@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useInitial } from "@/lib/use-in-view-animation";
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
@@ -49,6 +50,7 @@ function useTypewriter(phrases: string[]) {
 }
 
 export default function Hero() {
+  const initial = useInitial();
   const typedText = useTypewriter(siteConfig.cta.typewriterPhrases);
 
   return (
@@ -58,7 +60,7 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         variants={staggerContainer(0.15, 0.1)}
-        initial="hidden"
+        initial={initial}
         animate="visible"
         className="relative z-10 max-w-[900px] mx-auto px-4 sm:px-6 text-center pt-20 pb-16 sm:pt-24 sm:pb-20"
       >
@@ -92,7 +94,7 @@ export default function Hero() {
         {/* CTAs */}
         <motion.div
           variants={staggerContainer(0.1)}
-          initial="hidden"
+          initial={initial}
           animate="visible"
           className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10"
         >
@@ -112,7 +114,7 @@ export default function Hero() {
         {/* Service pills */}
         <motion.div
           variants={staggerContainer(0.08, 0.6)}
-          initial="hidden"
+          initial={initial}
           animate="visible"
           className="flex flex-wrap items-center justify-center gap-3 mt-10"
         >

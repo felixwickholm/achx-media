@@ -3,15 +3,17 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { fadeUpSubtle, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig } from "@/data/site-config";
 import BookCallButton from "@/components/ui/BookCallButton";
 
 export default function Footer() {
+  const initial = useInitial();
   return (
     <footer className="border-t border-white/[0.06] bg-background">
       <motion.div
         variants={fadeUpSubtle}
-        initial="hidden"
+        initial={initial}
         whileInView="visible"
         viewport={viewportOnce}
         className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12 sm:py-16"

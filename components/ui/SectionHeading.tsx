@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { fadeUpSubtle, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 
 interface SectionHeadingProps {
   title: string;
@@ -15,10 +16,11 @@ export default function SectionHeading({
   subtitle,
   centered = true,
 }: SectionHeadingProps) {
+  const initial = useInitial();
   return (
     <motion.div
       variants={fadeUpSubtle}
-      initial="hidden"
+      initial={initial}
       whileInView="visible"
       viewport={viewportOnce}
       className={`mb-12 ${centered ? "text-center" : ""}`}

@@ -2,17 +2,19 @@
 
 import { motion } from "motion/react";
 import { fadeUpSubtle, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig } from "@/data/site-config";
 import Image from "next/image";
 
 export default function TrustedBy() {
+  const initial = useInitial();
   const doubled = [...siteConfig.clients, ...siteConfig.clients];
 
   return (
     <section className="py-16 bg-background overflow-hidden border-t border-white/[0.04]">
       <motion.p
         variants={fadeUpSubtle}
-        initial="hidden"
+        initial={initial}
         whileInView="visible"
         viewport={viewportOnce}
         className="text-center text-[13px] font-medium text-white/20 uppercase tracking-[0.15em] mb-10"

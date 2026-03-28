@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useInitial } from "@/lib/use-in-view-animation";
 import {
   fadeUpSubtle,
   lineGrow,
@@ -29,6 +30,7 @@ export default function Process({
   ];
 
   const items = steps ?? defaultSteps;
+  const initial = useInitial();
 
   return (
     <section id="process" className="py-14 sm:py-20 md:py-28 bg-background">
@@ -39,7 +41,7 @@ export default function Process({
         <div className="hidden md:block">
           <motion.div
             variants={staggerContainer(0.12)}
-            initial="hidden"
+            initial={initial}
             whileInView="visible"
             viewport={viewportOnce}
             className="relative grid grid-cols-4 gap-8"
@@ -72,7 +74,7 @@ export default function Process({
         <div className="md:hidden">
           <motion.div
             variants={staggerContainer(0.12)}
-            initial="hidden"
+            initial={initial}
             whileInView="visible"
             viewport={viewportOnce}
             className="relative space-y-8 pl-10 sm:pl-12"

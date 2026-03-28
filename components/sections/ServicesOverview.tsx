@@ -2,11 +2,13 @@
 
 import { motion } from "motion/react";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig } from "@/data/site-config";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 
 export default function ServicesOverview() {
+  const initial = useInitial();
   return (
     <section className="py-14 sm:py-20 md:py-28 bg-[#0c0d0f]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
@@ -17,7 +19,7 @@ export default function ServicesOverview() {
 
         <motion.div
           variants={staggerContainer(0.15)}
-          initial="hidden"
+          initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-3 gap-4"

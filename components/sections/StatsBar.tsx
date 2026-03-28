@@ -2,14 +2,16 @@
 
 import { motion } from "motion/react";
 import { fadeUpSubtle, staggerContainer, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig } from "@/data/site-config";
 
 export default function StatsBar() {
+  const initial = useInitial();
   return (
     <section className="py-16 md:py-20 bg-[#08090a] border-y border-white/[0.04]">
       <motion.div
         variants={staggerContainer(0.1)}
-        initial="hidden"
+        initial={initial}
         whileInView="visible"
         viewport={viewportOnce}
         className="max-w-[1200px] mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"

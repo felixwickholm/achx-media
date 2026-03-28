@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useInitial } from "@/lib/use-in-view-animation";
 import {
   fadeUp,
   staggerContainer,
@@ -28,6 +29,7 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 export default function WhyUs() {
+  const initial = useInitial();
   return (
     <section className="py-14 sm:py-20 md:py-28 bg-background">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
@@ -38,7 +40,7 @@ export default function WhyUs() {
 
         <motion.div
           variants={staggerContainer(0.15)}
-          initial="hidden"
+          initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"

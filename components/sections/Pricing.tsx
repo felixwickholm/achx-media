@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { motion } from "motion/react";
 import {
   fadeUp,
@@ -13,6 +14,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import BookCallButton from "@/components/ui/BookCallButton";
 
 export default function Pricing() {
+  const initial = useInitial();
   return (
     <section id="pricing" className="py-14 sm:py-20 md:py-28 bg-[#0c0d0f]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
@@ -23,7 +25,7 @@ export default function Pricing() {
 
         <motion.div
           variants={staggerContainer(0.12)}
-          initial="hidden"
+          initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
@@ -100,7 +102,7 @@ export default function Pricing() {
 
         <motion.p
           variants={fadeUpSubtle}
-          initial="hidden"
+          initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
           className="text-center text-[13px] text-white/20 mt-8"

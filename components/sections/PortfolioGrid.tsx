@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig, type ServiceSlug, type PortfolioVideo } from "@/data/site-config";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FilterTabs from "@/components/ui/FilterTabs";
@@ -27,6 +28,7 @@ export default function PortfolioGrid({
   );
   const [activeVideo, setActiveVideo] = useState<PortfolioVideo | null>(null);
 
+  const initial = useInitial();
   const videos = filterByService
     ? siteConfig.portfolio.filter((v) => v.service === filterByService)
     : activeFilter === "all"
@@ -46,7 +48,7 @@ export default function PortfolioGrid({
           <motion.div
             key={activeFilter}
             variants={staggerContainer(0.08)}
-            initial="hidden"
+            initial={initial}
             whileInView="visible"
             viewport={viewportOnce}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"

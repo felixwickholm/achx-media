@@ -2,11 +2,13 @@
 
 import { motion } from "motion/react";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
+import { useInitial } from "@/lib/use-in-view-animation";
 import { siteConfig } from "@/data/site-config";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FAQItemComponent from "@/components/ui/FAQItem";
 
 export default function FAQ() {
+  const initial = useInitial();
   return (
     <section id="faq" className="py-14 sm:py-20 md:py-28 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -17,7 +19,7 @@ export default function FAQ() {
 
         <motion.div
           variants={staggerContainer(0.08)}
-          initial="hidden"
+          initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
         >
