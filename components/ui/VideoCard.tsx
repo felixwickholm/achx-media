@@ -11,13 +11,11 @@ interface VideoCardProps {
 }
 
 const serviceLabels: Record<string, string> = {
-  "video-editing": "Editing",
   "launch-videos": "Launch",
   "ai-avatar": "AI Avatar",
 };
 
 const serviceGradients: Record<string, string> = {
-  "video-editing": "from-indigo-500/20 via-purple-500/10 to-blue-500/20",
   "launch-videos": "from-orange-500/20 via-rose-500/10 to-pink-500/20",
   "ai-avatar": "from-emerald-500/20 via-teal-500/10 to-cyan-500/20",
 };

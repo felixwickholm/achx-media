@@ -3,7 +3,7 @@
 // Edit this ONE file to update all videos, services, and content.
 // ═══════════════════════════════════════════════════════════
 
-export type ServiceSlug = "video-editing" | "launch-videos" | "ai-avatar";
+export type ServiceSlug = "launch-videos" | "ai-avatar";
 
 export interface PortfolioVideo {
   id: string;
@@ -112,46 +112,6 @@ export const siteConfig = {
 
   // ─── Services ────────────────────────────────────────────
   services: [
-    {
-      slug: "video-editing",
-      title: "Video Editing",
-      shortTitle: "Editing",
-      tagline: "Scroll-stopping edits that keep viewers watching",
-      description:
-        "Professional video editing for your YouTube, social media, and product content. We handle cuts, color grading, motion graphics, and sound design so you can focus on creating.",
-      icon: "scissors",
-      features: [
-        "Professional cuts & transitions",
-        "Color grading & correction",
-        "Motion graphics & lower thirds",
-        "Sound design & mixing",
-        "Unlimited revisions",
-        "48-hour turnaround available",
-      ],
-      processSteps: [
-        {
-          step: 1,
-          title: "Send Raw Footage",
-          description: "Upload your clips and share your vision. We handle the rest.",
-        },
-        {
-          step: 2,
-          title: "We Edit",
-          description: "Our editors craft a polished cut with graphics, color, and sound.",
-        },
-        {
-          step: 3,
-          title: "Review & Revise",
-          description: "Watch the draft, request changes. We revise until you love it.",
-        },
-        {
-          step: 4,
-          title: "Deliver",
-          description: "Get your final video in any format, optimized for every platform.",
-        },
-      ],
-      ctaText: "Get Your Video Edited",
-    },
     {
       slug: "launch-videos",
       title: "Launch Videos",
@@ -331,23 +291,6 @@ export const siteConfig = {
 
   // ─── Pricing ────────────────────────────────────────────
   pricing: [
-    {
-      name: "Video Editing",
-      slug: "video-editing",
-      price: "€299",
-      unit: "per video",
-      description: "Professional editing for your content",
-      features: [
-        "Professional cuts & transitions",
-        "Color grading & correction",
-        "Motion graphics & titles",
-        "Sound design & mixing",
-        "Unlimited revisions",
-        "48h turnaround available",
-      ],
-      highlighted: false,
-      ctaText: "Get Started",
-    },
     {
       name: "Launch Video",
       slug: "launch-videos",

@@ -13,8 +13,8 @@ export default function ServicesOverview() {
     <section className="py-14 sm:py-20 md:py-28 bg-[#0c0d0f]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <SectionHeading
-          title="Three Ways to Grow with Video"
-          subtitle="Choose the service that fits your stage — or combine all three"
+          title="Two Ways to Grow with Video"
+          subtitle="Choose the service that fits your stage — or combine both"
         />
 
         <motion.div
@@ -22,7 +22,7 @@ export default function ServicesOverview() {
           initial={initial}
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto"
         >
           {siteConfig.services.map((service) => (
             <ServiceCard key={service.slug} service={service} />
