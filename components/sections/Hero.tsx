@@ -54,7 +54,7 @@ export default function Hero() {
   const typedText = useTypewriter(siteConfig.cta.typewriterPhrases);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#08090a]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <HeroGlow />
 
       {/* Content */}
@@ -67,26 +67,26 @@ export default function Hero() {
         {/* Accent dot */}
         <motion.div
           variants={scaleIn}
-          className="w-2 h-2 rounded-full bg-accent-light mx-auto mb-8"
+          className="w-2 h-2 rounded-full bg-orange-400 mx-auto mb-8"
         />
 
         {/* Headline */}
         <motion.h1
           variants={fadeUpBlur}
-          className="text-3xl sm:text-5xl md:text-7xl font-semibold text-white leading-[1.05] tracking-[-0.035em]"
+          className="text-3xl sm:text-5xl md:text-7xl font-semibold text-black leading-[1.05] tracking-[-0.035em]"
         >
           Videos That
           <br />
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300 bg-clip-text text-transparent">
+          <span className="text-gradient-animated">
             {typedText}
           </span>
-          <span className="inline-block w-[3px] h-[0.7em] bg-indigo-400 ml-1 align-middle animate-pulse" />
+          <span className="inline-block w-[2px] h-[0.75em] bg-orange-400/90 ml-0.5 align-middle animate-[cursor-blink_1s_step-end_infinite]" />
         </motion.h1>
 
         {/* Subheadline */}
         <motion.p
           variants={fadeUpSubtle}
-          className="mt-6 text-base sm:text-[17px] md:text-lg text-white/40 max-w-[520px] mx-auto leading-relaxed"
+          className="mt-6 text-base sm:text-[17px] md:text-lg text-black/50 max-w-[540px] mx-auto leading-relaxed"
         >
           {siteConfig.hero.subheadline}
         </motion.p>
@@ -104,7 +104,7 @@ export default function Hero() {
           <motion.div variants={buttonReveal}>
             <a
               href="#portfolio"
-              className="btn-secondary inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full border border-white/[0.1] text-white/60 hover:text-white/80 hover:border-white/[0.15] hover:bg-white/[0.03] backdrop-blur-sm transition-all duration-200"
+              className="btn-secondary inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full border border-black/[0.1] text-black/60 hover:text-black/80 hover:border-black/[0.15] hover:bg-black/[0.03] backdrop-blur-sm transition-all duration-200"
             >
               {siteConfig.hero.ctaSecondary}
             </a>
@@ -123,7 +123,7 @@ export default function Hero() {
               <Link
                 href={`/services/${s.slug}`}
                 prefetch={false}
-                className="px-4 py-2 text-sm font-medium rounded-full border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/[0.15] transition-colors duration-200"
+                className="px-4 py-2 text-sm font-medium rounded-full border border-black/[0.1] text-black/50 hover:text-black/70 hover:border-black/[0.2] transition-colors duration-200"
               >
                 {s.title}
               </Link>
@@ -134,7 +134,7 @@ export default function Hero() {
         {/* Social proof line */}
         <motion.p
           variants={fadeUpSubtle}
-          className="mt-16 text-[13px] text-white/25"
+          className="mt-16 text-[13px] text-black/25"
         >
           Trusted by 50+ SaaS and fast-growing startups
         </motion.p>

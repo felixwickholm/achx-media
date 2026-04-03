@@ -10,7 +10,7 @@ import {
 } from "@/lib/animations";
 import type { Service } from "@/data/site-config";
 import BookCallButton from "@/components/ui/BookCallButton";
-import FloatingOrbs from "@/components/effects/FloatingOrbs";
+import ProximityLines from "@/components/effects/ProximityLines";
 
 interface ServiceHeroProps {
   service: Service;
@@ -18,12 +18,12 @@ interface ServiceHeroProps {
 
 export default function ServiceHero({ service }: ServiceHeroProps) {
   return (
-    <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-cta-bg pt-20 pb-12 sm:pt-24 sm:pb-16">
-      <FloatingOrbs variant="dark" />
+    <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#000000] pt-20 pb-12 sm:pt-24 sm:pb-16">
+      <ProximityLines spacing={45} radius={140} />
 
       <motion.div
         variants={staggerContainer(0.12, 0.1)}
-        initial="hidden"
+        initial="visible"
         animate="visible"
         className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center"
       >
@@ -62,7 +62,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
         </motion.p>
 
         <motion.div variants={buttonReveal} className="mt-10">
-          <BookCallButton variant="light" size="lg">
+          <BookCallButton variant="primary" size="lg">
             {service.ctaText}
           </BookCallButton>
         </motion.div>

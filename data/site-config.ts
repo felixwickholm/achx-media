@@ -78,9 +78,10 @@ export const siteConfig = {
   brand: {
     name: "AchX Media",
     tagline: "Video Production for SaaS & Startups",
-    email: "hello@achx.in",
-    twitter: "https://x.com/achxmedia",
-    calNamespace: "20min",
+    email: "achxmedia@gmail.com",
+    twitter: "https://x.com/laxman_achx",
+    calNamespace: "30min",
+    calLink: "laxman.designs/30min",
   },
 
   hero: {
@@ -94,12 +95,15 @@ export const siteConfig = {
   // ─── Clients (logo bar) ──────────────────────────────────
   clients: [
     { name: "WicFlow", logo: "/logos/wicflow.svg" },
-    { name: "Kylra AI", logo: "/logos/kylra.svg" },
-    { name: "Whop", logo: "/logos/whop.svg" },
     { name: "Paybase", logo: "/logos/paybase.svg" },
     { name: "Docustream", logo: "/logos/docustream.svg" },
     { name: "Shipday", logo: "/logos/shipday.svg" },
     { name: "Taplio", logo: "/logos/taplio.svg" },
+    { name: "FetchTalent AI" },
+    { name: "LinQfolio" },
+    { name: "Google" },
+    { name: "Klyara AI", logo: "/logos/kylra.svg" },
+    { name: "Grok AI" },
   ] as ClientLogo[],
 
   // ─── Stats (numbers bar) ─────────────────────────────────
@@ -218,17 +222,6 @@ export const siteConfig = {
       description: "SaaS launch video that helped WicFlow secure investor interest and drive early traction.",
     },
     {
-      id: "lv-2",
-      title: "Kylra AI Launch Video",
-      client: "Kylra AI",
-      videoFile: "/videos/kylra-ai.mp4",
-      thumbnail: "/videos/kylra-ai-thumb.jpg",
-      service: "launch-videos",
-      featured: true,
-      result: "2x signups",
-      description: "Cinematic product launch video with scripted narrative, voiceover, and motion design.",
-    },
-    {
       id: "ai-1",
       title: "AI Avatar Demo",
       client: "AchX Media",
@@ -239,17 +232,39 @@ export const siteConfig = {
       result: "No camera needed",
       description: "AI-powered presenter video — professional quality without filming a single frame.",
     },
-    // ─── Additional portfolio (service pages only) ─────────
+    // ─── Additional portfolio ─────────────────────────────────
     {
-      id: "lv-3",
-      title: "Whop Platform Explainer",
-      client: "Whop",
-      videoFile: "/videos/whop.mp4",
-      thumbnail: "/videos/whop-thumb.jpg",
+      id: "lv-4",
+      title: "FetchTalent AI Launch",
+      client: "FetchTalent AI",
+      videoFile: "/videos/fetchtalentai.mp4",
+      thumbnail: "/videos/fetchtalentai-thumb.jpg",
       service: "launch-videos",
       featured: true,
-      result: "350% CTR",
-      description: "Compelling explainer that breaks down a complex platform into a clear, engaging story.",
+      result: "AI recruitment",
+      description: "Launch video for an AI-powered recruitment platform that automates candidate evaluation.",
+    },
+    {
+      id: "lv-5",
+      title: "Google AI Mode Promo",
+      client: "Google",
+      videoFile: "/videos/google-ai-mode.mp4",
+      thumbnail: "/videos/google-ai-mode-thumb.jpg",
+      service: "launch-videos",
+      featured: true,
+      result: "Product launch",
+      description: "Cinematic promo showcasing Google's AI Mode search feature with dynamic motion graphics.",
+    },
+    {
+      id: "lv-6",
+      title: "LinQfolio Explainer",
+      client: "LinQfolio",
+      videoFile: "/videos/linqfolio.mp4",
+      thumbnail: "/videos/linqfolio-thumb.jpg",
+      service: "launch-videos",
+      featured: true,
+      result: "10K+ reviews",
+      description: "SaaS explainer for a portfolio and reviews platform, driving user trust and signups.",
     },
   ] as PortfolioVideo[],
 
@@ -262,22 +277,6 @@ export const siteConfig = {
       company: "WicFlow",
       quote:
         "AchX helped us create a launch video that played a key role in getting investors interested in our company. The quality was on par with what we'd seen from much bigger agencies.",
-    },
-    {
-      id: "2",
-      name: "Sarah Chen",
-      role: "Head of Marketing",
-      company: "Kylra AI",
-      quote:
-        "We used to spend weeks coordinating video production. Now we get the same quality in a fraction of the time — and faster too. AchX is our go-to for every launch.",
-    },
-    {
-      id: "3",
-      name: "Marcus Rivera",
-      role: "Growth Lead",
-      company: "Whop",
-      quote:
-        "Our explainer video directly doubled our landing page conversion rate. AchX understood our product better than agencies that cost 5x more.",
     },
     {
       id: "4",

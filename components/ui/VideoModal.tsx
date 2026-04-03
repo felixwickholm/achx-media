@@ -40,12 +40,13 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 modal-backdrop bg-black/80"
+          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-8 backdrop-blur-xl bg-black/70"
           onClick={onClose}
         >
           {/* Close button */}
           <button
             onClick={onClose}
+            aria-label="Close video"
             className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">

@@ -10,7 +10,8 @@ import BookCallButton from "@/components/ui/BookCallButton";
 export default function Footer() {
   const initial = useInitial();
   return (
-    <footer className="border-t border-white/[0.06] bg-background">
+    <footer className="relative bg-[#000000]">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <motion.div
         variants={fadeUpSubtle}
         initial={initial}
@@ -21,10 +22,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <p className="text-[15px] font-semibold tracking-tight text-white mb-2">
+            <p className="text-base font-bold tracking-[-0.02em] text-white mb-3">
               {siteConfig.brand.name}
             </p>
-            <p className="text-white/25 text-[13px] leading-relaxed mb-4">
+            <p className="text-white/30 text-[13px] leading-relaxed mb-4">
               {siteConfig.brand.tagline}
             </p>
             <BookCallButton size="sm" variant="primary" />
@@ -32,7 +33,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-[13px] font-semibold text-white/30 uppercase tracking-[0.15em] mb-4">
+            <p className="text-[13px] font-semibold text-white/35 uppercase tracking-[0.15em] mb-4">
               Services
             </p>
             <ul className="space-y-2">
@@ -41,7 +42,7 @@ export default function Footer() {
                   <Link
                     href={`/services/${s.slug}`}
                     prefetch={false}
-                    className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
+                    className="text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200"
                   >
                     {s.title}
                   </Link>
@@ -52,31 +53,22 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <p className="text-[13px] font-semibold text-white/30 uppercase tracking-[0.15em] mb-4">
+            <p className="text-[13px] font-semibold text-white/35 uppercase tracking-[0.15em] mb-4">
               Company
             </p>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#portfolio"
-                  className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
-                >
+                <a href="#portfolio" className="text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200">
                   Portfolio
                 </a>
               </li>
               <li>
-                <a
-                  href="#process"
-                  className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
-                >
+                <a href="#process" className="text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200">
                   How It Works
                 </a>
               </li>
               <li>
-                <a
-                  href="#faq"
-                  className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
-                >
+                <a href="#faq" className="text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200">
                   FAQ
                 </a>
               </li>
@@ -85,25 +77,17 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="text-[13px] font-semibold text-white/30 uppercase tracking-[0.15em] mb-4">
+            <p className="text-[13px] font-semibold text-white/35 uppercase tracking-[0.15em] mb-4">
               Connect
             </p>
             <ul className="space-y-2">
               <li>
-                <a
-                  href={`mailto:${siteConfig.brand.email}`}
-                  className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
-                >
+                <a href={`mailto:${siteConfig.brand.email}`} className="text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200">
                   {siteConfig.brand.email}
                 </a>
               </li>
               <li>
-                <a
-                  href={siteConfig.brand.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[13px] text-white/25 hover:text-white/50 transition-colors duration-200"
-                >
+                <a href={siteConfig.brand.twitter} target="_blank" rel="noopener noreferrer" className="text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200">
                   Twitter / X
                 </a>
               </li>
@@ -113,11 +97,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-white/15">
-            &copy; {new Date().getFullYear()} {siteConfig.brand.name}. All
-            rights reserved.
+          <p className="text-[12px] text-white/25">
+            &copy; {new Date().getFullYear()} {siteConfig.brand.name}. All rights reserved.
           </p>
-          <p className="text-[12px] text-white/10">
+          <p className="text-[12px] text-white/15">
             Video production for SaaS companies
           </p>
         </div>

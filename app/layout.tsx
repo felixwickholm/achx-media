@@ -10,13 +10,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AchX Media | Video Production for SaaS & Startups",
   description:
-    "Video editing, launch videos, and AI avatar videos for SaaS companies and startups. Book a free call.",
+    "Launch videos and AI avatar videos for SaaS companies and startups. Book a free call.",
+  metadataBase: new URL("https://achx.in"),
   openGraph: {
     title: "AchX Media | Video Production for SaaS & Startups",
     description:
-      "Video editing, launch videos, and AI avatar videos for SaaS companies and startups. Book a free call.",
+      "Launch videos and AI avatar videos for SaaS companies and startups.",
     type: "website",
     url: "https://achx.in",
+    siteName: "AchX Media",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AchX Media | Video Production for SaaS & Startups",
+    description:
+      "Launch videos and AI avatar videos for SaaS companies and startups.",
   },
 };
 

@@ -22,14 +22,14 @@ export default function FilterTabs({ active, onChange }: FilterTabsProps) {
           onClick={() => onChange(tab.value)}
           className={`relative px-3.5 sm:px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors duration-200 ${
             active === tab.value
-              ? "text-[#08090a]"
-              : "text-white/40 hover:text-white/60"
+              ? "text-white"
+              : "text-black/40 hover:text-black/60"
           }`}
         >
           {active === tab.value && (
             <motion.div
               layoutId="activeFilter"
-              className="absolute inset-0 bg-white rounded-full"
+              className="absolute inset-0 bg-black rounded-full shadow-[0_0_16px_-2px_rgba(0,0,0,0.12)]"
               transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
             />
           )}

@@ -39,7 +39,7 @@ export default function VideoCard({ video, onPlay }: VideoCardProps) {
       className="group cursor-pointer"
       onClick={() => hasVideo && onPlay(video)}
     >
-      <div className="video-card-thumb relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] aspect-video">
+      <div className="video-card-thumb relative overflow-hidden rounded-2xl border border-black/[0.08] bg-black/[0.03] aspect-video group-hover:border-black/[0.15] transition-all duration-400">
         {thumbnail ? (
           <img
             src={thumbnail}
@@ -61,21 +61,21 @@ export default function VideoCard({ video, onPlay }: VideoCardProps) {
         ) : (
           <div className={`absolute inset-0 bg-gradient-to-br ${serviceGradients[video.service] ?? "from-indigo-500/20 to-purple-500/20"}`}>
             <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-              <div className="w-12 h-12 rounded-full bg-white/[0.08] flex items-center justify-center mb-3">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" className="opacity-40">
+              <div className="w-12 h-12 rounded-full bg-black/[0.08] flex items-center justify-center mb-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5" className="opacity-40">
                   <polygon points="5,3 19,12 5,21" />
                 </svg>
               </div>
-              <p className="text-white/40 text-sm font-medium text-center">{video.title}</p>
+              <p className="text-black/40 text-sm font-medium text-center">{video.title}</p>
             </div>
           </div>
         )}
 
         {/* Play button overlay */}
         {hasVideo && (
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#08090a" className="ml-1">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-400">
+            <div className="w-14 h-14 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.3)] scale-75 group-hover:scale-100 transition-transform duration-400">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#000" className="ml-1">
                 <polygon points="5,3 19,12 5,21" />
               </svg>
             </div>
@@ -84,7 +84,7 @@ export default function VideoCard({ video, onPlay }: VideoCardProps) {
 
         {/* Service badge */}
         <div className="absolute top-3 right-3">
-          <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/[0.08] text-white/60 backdrop-blur-sm border border-white/[0.06]">
+          <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/80 text-black/60 backdrop-blur-sm border border-black/[0.06]">
             {serviceLabels[video.service]}
           </span>
         </div>
@@ -92,7 +92,7 @@ export default function VideoCard({ video, onPlay }: VideoCardProps) {
         {/* Result metric */}
         {video.result && (
           <div className="absolute bottom-3 left-3">
-            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-accent text-white">
+            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-orange-500 text-white shadow-[0_0_12px_rgba(249,115,22,0.4)]">
               {video.result}
             </span>
           </div>
@@ -101,8 +101,8 @@ export default function VideoCard({ video, onPlay }: VideoCardProps) {
 
       {/* Info below thumbnail */}
       <div className="mt-3 px-1">
-        <p className="font-semibold text-white/80">{video.title}</p>
-        <p className="text-sm text-white/30">{video.client}</p>
+        <p className="font-semibold text-black/80">{video.title}</p>
+        <p className="text-sm text-black/40">{video.client}</p>
       </div>
     </motion.div>
   );

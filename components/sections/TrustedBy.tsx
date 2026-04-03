@@ -11,13 +11,13 @@ export default function TrustedBy() {
   const doubled = [...siteConfig.clients, ...siteConfig.clients];
 
   return (
-    <section className="py-16 bg-background overflow-hidden border-t border-white/[0.04]">
+    <section className="py-16 bg-background overflow-hidden border-t border-black/[0.04]">
       <motion.p
         variants={fadeUpSubtle}
         initial={initial}
         whileInView="visible"
         viewport={viewportOnce}
-        className="text-center text-[13px] font-medium text-white/20 uppercase tracking-[0.15em] mb-10"
+        className="text-center text-[13px] font-medium text-black/30 uppercase tracking-[0.15em] mb-10"
       >
         Trusted by 50+ SaaS and fast-growing startups
       </motion.p>
@@ -31,7 +31,7 @@ export default function TrustedBy() {
           {doubled.map((client, i) => (
             <div
               key={`${client.name}-${i}`}
-              className="mx-8 sm:mx-14 shrink-0 opacity-40 hover:opacity-60 transition-opacity duration-300"
+              className="mx-10 sm:mx-16 shrink-0 opacity-40 hover:opacity-80 transition-all duration-500"
             >
               {client.logo ? (
                 <Image
@@ -39,10 +39,10 @@ export default function TrustedBy() {
                   alt={client.name}
                   width={120}
                   height={28}
-                  className="h-7 w-auto"
+                  className="h-7 w-auto invert"
                 />
               ) : (
-                <span className="text-lg font-semibold text-white select-none">
+                <span className="text-lg font-semibold text-black select-none">
                   {client.name}
                 </span>
               )}

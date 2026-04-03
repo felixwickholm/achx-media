@@ -59,24 +59,6 @@ export const buttonReveal: Variants = {
 
 // ─── New Variants ───────────────────────────────────────────
 
-export const slideInLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease },
-  },
-};
-
-export const slideInRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease },
-  },
-};
-
 export const modalIn: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: {

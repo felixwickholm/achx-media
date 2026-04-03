@@ -33,7 +33,7 @@ export default function Process({
   const initial = useInitial();
 
   return (
-    <section id="process" className="py-14 sm:py-20 md:py-28 bg-background">
+    <section id="process" className="py-14 sm:py-20 md:py-28 bg-[#f5e8e2]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <SectionHeading title={title} subtitle={subtitle} />
 
@@ -49,7 +49,7 @@ export default function Process({
             {/* Connector line */}
             <motion.div
               variants={lineGrow}
-              className="process-connector absolute top-8 left-[12.5%] right-[12.5%] h-px bg-white/[0.06]"
+              className="process-connector absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-orange-500/[0.08] via-orange-500/[0.2] to-orange-500/[0.08]"
             />
 
             {items.map((item) => (
@@ -58,13 +58,13 @@ export default function Process({
                 variants={fadeUpSubtle}
                 className="relative text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/[0.08] text-white flex items-center justify-center text-xl font-semibold mx-auto mb-5">
+                <div className="w-16 h-16 rounded-full bg-orange-500/[0.06] border border-orange-500/[0.15] text-black flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-[0_0_20px_-4px_rgba(249,115,22,0.12)]">
                   {item.step}
                 </div>
-                <h3 className="text-[15px] font-semibold text-white mb-2">
+                <h3 className="text-[15px] font-semibold text-black mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[13px] text-white/35">{item.description}</p>
+                <p className="text-[13px] text-black/40">{item.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -80,7 +80,7 @@ export default function Process({
             className="relative space-y-8 pl-10 sm:pl-12"
           >
             {/* Vertical line */}
-            <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-px bg-white/[0.06]" />
+            <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-px bg-black/[0.08]" />
 
             {items.map((item) => (
               <motion.div
@@ -88,13 +88,13 @@ export default function Process({
                 variants={fadeUpSubtle}
                 className="relative"
               >
-                <div className="absolute -left-10 sm:-left-12 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/[0.04] border border-white/[0.08] text-white flex items-center justify-center text-xs sm:text-sm font-semibold">
+                <div className="absolute -left-10 sm:-left-12 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-orange-500/[0.06] border border-orange-500/[0.15] text-black flex items-center justify-center text-xs sm:text-sm font-semibold shadow-[0_0_16px_-4px_rgba(249,115,22,0.12)]">
                   {item.step}
                 </div>
-                <h3 className="text-[15px] font-semibold text-white mb-1">
+                <h3 className="text-[15px] font-semibold text-black mb-1">
                   {item.title}
                 </h3>
-                <p className="text-[13px] text-white/35">{item.description}</p>
+                <p className="text-[13px] text-black/40">{item.description}</p>
               </motion.div>
             ))}
           </motion.div>

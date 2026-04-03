@@ -74,8 +74,8 @@ export default async function ServicePage({
                 p(cal, ar);
               };
             })(window, "https://app.cal.com/embed/embed.js", "init");
-            Cal("init", "20min", { origin: "https://app.cal.com" });
-            Cal.ns["20min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
+            Cal("init", "30min", { origin: "https://app.cal.com" });
+            Cal.ns["30min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
           `,
         }}
       />

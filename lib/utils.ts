@@ -23,7 +23,7 @@ export function getServiceBySlug(slug: ServiceSlug) {
 export function openCalBooking() {
   if (typeof window !== "undefined" && window.Cal) {
     window.Cal.ns[siteConfig.brand.calNamespace]("modal", {
-      calLink: siteConfig.brand.calNamespace,
+      calLink: siteConfig.brand.calLink,
       config: { layout: "month_view" },
     });
   }

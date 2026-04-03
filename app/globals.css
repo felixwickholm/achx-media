@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08090a;
-  --foreground: #e8eaed;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --warm: #111214;
-  --warm-dark: #0d0e10;
-  --cta-bg: #08090a;
-  --cta-text: #e8eaed;
+  --background: #faefe9;
+  --foreground: #000000;
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --warm: #f5e8e2;
+  --warm-dark: #efe0da;
+  --cta-bg: #000000;
+  --cta-text: #faefe9;
 }
 
 @theme inline {
@@ -23,9 +23,7 @@
   --font-sans: var(--font-inter);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
@@ -33,70 +31,157 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-/* ─── Hero Grid Pattern ──────────────────────────────────── */
+/* ─── Typography ─────────────────────────────────────────── */
 
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Floating Orbs ──────────────────────────────────────── */
+::selection { background: rgba(249, 115, 22, 0.2); color: black; }
 
-@keyframes float-orb-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -30px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.97); }
+:focus-visible {
+  outline: 2px solid rgba(249, 115, 22, 0.5);
+  outline-offset: 2px;
+  border-radius: 8px;
 }
 
-@keyframes float-orb-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-30px, 40px) scale(0.95); }
-  66% { transform: translate(25px, -15px) scale(1.03); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.2); }
+
+/* ─── Animated Gradient Text ─────────────────────────────── */
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-@keyframes float-orb-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(20px, 25px) scale(1.04); }
-}
-
-/* ─── Text Shimmer ───────────────────────────────────────── */
-
-@keyframes text-shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.text-shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--foreground) 0%,
-    var(--foreground) 35%,
-    var(--accent-light) 50%,
-    var(--foreground) 65%,
-    var(--foreground) 100%
-  );
-  background-size: 200% auto;
+.text-gradient-animated {
+  background: linear-gradient(135deg, #f97316, #ea580c, #1a1a1a, #c2410c, #f97316);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: text-shimmer 2.5s ease-in-out 1.8s 1 both;
+  animation: gradient-shift 6s ease infinite;
 }
 
-/* ─── Video Glow Border ──────────────────────────────────── */
+.text-gradient-animated-light {
+  background: linear-gradient(135deg, #fb923c, #f97316, #fff7ed, #f97316, #fb923c);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* ─── Flowing Line Animation ─────────────────────────────── */
+
+@keyframes line-draw {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes line-draw-reverse {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -1000; }
+}
+
+@keyframes line-fade {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.15; }
+}
+
+/* ─── Hero Grid ──────────────────────────────────────────── */
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ─── Cursor Blink ───────────────────────────────────────── */
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ─── Button Pulse ───────────────────────────────────────── */
+
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.2), inset 0 1px 0 rgba(255,255,255,0.15); }
+  50% { box-shadow: 0 0 30px rgba(249, 115, 22, 0.35), inset 0 1px 0 rgba(255,255,255,0.15); }
+}
+
+/* ─── Button Hover ───────────────────────────────────────── */
+
+.btn-primary {
+  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.25), 0 2px 8px rgba(249, 115, 22, 0.1);
+}
+
+.btn-secondary {
+  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.btn-cta-light {
+  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+.btn-cta-light:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15), 0 0 20px rgba(249, 115, 22, 0.15);
+}
+
+/* ─── Card Shadows ───────────────────────────────────────── */
+
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+}
+.shadow-card-hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04);
+}
+
+/* ─── Video Card Hover ─────────────────────────────────── */
+
+.video-card-thumb {
+  transition: all 0.4s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+.video-card-thumb:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* ─── Service Card Hover ───────────────────────────────── */
+
+.service-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.4, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+  border-color: rgba(249, 115, 22, 0.15) !important;
+}
+
+/* ─── Glow Spin ──────────────────────────────────────────── */
 
 @keyframes glow-spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.animate-glow-spin { animation: glow-spin 8s linear infinite; }
 
-.animate-glow-spin {
-  animation: glow-spin 8s linear infinite;
-  will-change: transform;
-}
-
-/* ─── Film Grain Overlay ─────────────────────────────────── */
+/* ─── Grain Overlay ──────────────────────────────────────── */
 
 @keyframes grain-shift {
   0% { transform: translate(0, 0); }
@@ -114,141 +199,51 @@ body {
   height: 200%;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.02;
+  opacity: 0.012;
   background-image: url('/noise.svg');
   background-size: 200px 200px;
   animation: grain-shift 0.5s steps(4) infinite;
 }
 
-/* ─── Button Hover Effects ───────────────────────────────── */
-
-.btn-primary {
-  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow:
-    0 8px 30px rgba(99, 102, 241, 0.3),
-    0 2px 8px rgba(99, 102, 241, 0.15);
-}
-
-.btn-secondary {
-  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
-}
-
-.btn-secondary:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.15);
-}
-
-.btn-cta-light {
-  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
-}
-
-.btn-cta-light:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow:
-    0 8px 30px rgba(255, 255, 255, 0.15),
-    0 0 20px rgba(99, 102, 241, 0.2);
-}
-
-/* ─── Video Card Hover ─────────────────────────────────── */
-
-.video-card-thumb {
-  transition: transform 0.4s cubic-bezier(0.25, 0.4, 0.25, 1);
-}
-
-.video-card-thumb:hover {
-  transform: scale(1.03);
-}
-
-/* ─── Service Card Hover ───────────────────────────────── */
-
-.service-card {
-  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.08);
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* ─── Scrolling Marquee ────────────────────────────────── */
+/* ─── Scrolling Marquee ──────────────────────────────────── */
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.animate-marquee { animation: marquee 25s linear infinite; }
+.animate-marquee:hover { animation-play-state: paused; }
 
-.animate-marquee {
-  animation: marquee 25s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* ─── FAQ Accordion ────────────────────────────────────── */
+/* ─── FAQ Accordion ──────────────────────────────────────── */
 
 .faq-content {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
 }
+.faq-content[data-open="true"] { grid-template-rows: 1fr; }
+.faq-content > div { overflow: hidden; }
 
-.faq-content[data-open="true"] {
-  grid-template-rows: 1fr;
-}
+/* ─── Process Connector ──────────────────────────────────── */
 
-.faq-content > div {
-  overflow: hidden;
-}
+.process-connector { transform-origin: left center; }
 
-/* ─── Process Connector ────────────────────────────────── */
-
-.process-connector {
-  transform-origin: left center;
-}
-
-/* ─── Modal Backdrop ───────────────────────────────────── */
+/* ─── Modal Backdrop ─────────────────────────────────────── */
 
 .modal-backdrop {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-/* ─── Force visibility for motion components ──────────── */
-/* Framer-motion sets inline opacity:0 during SSR/hydration.
-   This ensures all page sections are always visible.        */
+/* ─── Section Line Separator ─────────────────────────────── */
 
-.grain-overlay > section,
-.grain-overlay > section > div,
-.grain-overlay > section > div > div,
-.grain-overlay > footer,
-.grain-overlay > footer > div {
-  opacity: 1 !important;
-  transform: none !important;
-  filter: none !important;
-}
-
-/* ─── CSS Scroll Animations (replace framer-motion) ───── */
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-}
-
-.animate-on-scroll {
-  animation: fade-up 0.6s ease-out both;
-  animation-timeline: view();
-  animation-range: entry 0% entry 30%;
+.section-glow-top { position: relative; }
+.section-glow-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.12), transparent);
 }

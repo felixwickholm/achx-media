@@ -7,11 +7,11 @@ import StatsBar from "@/components/sections/StatsBar";
 import PortfolioGrid from "@/components/sections/PortfolioGrid";
 import WhyUs from "@/components/sections/WhyUs";
 import Process from "@/components/sections/Process";
-
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/layout/Footer";
+import FlowingLines from "@/components/effects/FlowingLines";
 
 export default function Home() {
   return (
@@ -48,8 +48,8 @@ export default function Home() {
                 p(cal, ar);
               };
             })(window, "https://app.cal.com/embed/embed.js", "init");
-            Cal("init", "20min", { origin: "https://app.cal.com" });
-            Cal.ns["20min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
+            Cal("init", "30min", { origin: "https://app.cal.com" });
+            Cal.ns["30min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
           `,
         }}
       />
@@ -58,10 +58,16 @@ export default function Home() {
         <Navbar />
         <Hero />
         <TrustedBy />
-        <ServicesOverview />
+        <div className="relative">
+          <FlowingLines variant="cream" className="absolute top-0 left-0 right-0 opacity-60" />
+          <ServicesOverview />
+        </div>
         <StatsBar />
         <PortfolioGrid />
-        <WhyUs />
+        <div className="relative">
+          <FlowingLines variant="cream" className="absolute top-0 left-0 right-0 opacity-40" />
+          <WhyUs />
+        </div>
         <Process />
         <Testimonials />
         <FAQ />

@@ -34,26 +34,28 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <motion.div variants={fadeUp}>
       <Link href={`/services/${service.slug}`} prefetch={false} className="block">
-        <div className="service-card rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 sm:p-8 h-full">
-          <div className="w-14 h-14 rounded-xl bg-accent/[0.08] text-accent flex items-center justify-center mb-5 ring-1 ring-accent/[0.12]">
+        <div className="service-card group/card rounded-2xl border border-black/[0.06] bg-white/60 backdrop-blur-sm p-6 sm:p-8 h-full relative overflow-hidden">
+          {/* Hover gradient glow */}
+          <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-orange-500/[0.04] via-transparent to-purple-500/[0.02] pointer-events-none" />
+          <div className="relative w-14 h-14 rounded-xl bg-orange-500/[0.08] text-orange-500 flex items-center justify-center mb-5 ring-1 ring-orange-500/[0.15] shadow-[0_0_20px_-4px_rgba(249,115,22,0.1)]">
             {icons[service.icon]}
           </div>
 
-          <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+          <h3 className="relative text-lg sm:text-xl font-semibold text-black mb-2">
             {service.title}
           </h3>
 
-          <p className="text-white/35 mb-5">{service.tagline}</p>
+          <p className="relative text-black/45 mb-5">{service.tagline}</p>
 
-          <ul className="space-y-2 mb-6">
+          <ul className="relative space-y-2 mb-6">
             {service.features.slice(0, 3).map((f) => (
-              <li key={f} className="flex items-start gap-2 text-sm text-white/50">
+              <li key={f} className="flex items-start gap-2 text-sm text-black/55">
                 <svg
                   width="16"
                   height="16"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="var(--accent)"
+                  stroke="#f97316"
                   strokeWidth="2"
                   className="mt-0.5 shrink-0"
                 >
@@ -64,7 +66,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
             ))}
           </ul>
 
-          <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent group">
+          <span className="relative inline-flex items-center gap-1 text-sm font-semibold text-orange-500 group">
             Learn more
             <svg
               width="16"

@@ -49,17 +49,18 @@ export default function WhyUs() {
             <motion.div
               key={item.title}
               variants={fadeUp}
-              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-8"
+              className="group rounded-2xl border border-black/[0.06] bg-white/50 p-6 sm:p-8 hover:bg-white/80 hover:border-black/[0.1] transition-all duration-400 relative overflow-hidden shadow-card hover:shadow-card-hover"
             >
-              <div className="w-14 h-14 rounded-xl bg-accent/[0.08] text-accent flex items-center justify-center mb-5 ring-1 ring-accent/[0.12]">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-orange-500/[0.03] to-transparent pointer-events-none" />
+              <div className="relative w-14 h-14 rounded-xl bg-orange-500/[0.08] text-orange-500 flex items-center justify-center mb-5 ring-1 ring-orange-500/[0.15] group-hover:shadow-[0_0_24px_-4px_rgba(249,115,22,0.2)] transition-shadow duration-400">
                 {icons[item.icon]}
               </div>
 
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3 className="relative text-lg font-semibold text-black mb-3">
                 {item.title}
               </h3>
 
-              <p className="text-sm text-white/40 leading-relaxed">
+              <p className="relative text-sm text-black/50 leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

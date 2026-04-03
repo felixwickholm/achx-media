@@ -10,7 +10,7 @@ import ServiceCard from "@/components/ui/ServiceCard";
 export default function ServicesOverview() {
   const initial = useInitial();
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-[#0c0d0f]">
+    <section className="py-14 sm:py-20 md:py-28 bg-[#f5e8e2]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <SectionHeading
           title="Two Ways to Grow with Video"

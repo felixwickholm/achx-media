@@ -31,15 +31,15 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#08090a]/80 backdrop-blur-xl border-b border-white/[0.06]"
-            : "bg-transparent"
+            ? "bg-[#faefe9]/85 backdrop-blur-2xl border-b border-black/[0.06] shadow-[0_1px_0_0_rgba(99,102,241,0.06),0_8px_40px_-12px_rgba(0,0,0,0.08)]"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
-          <Link href="/" className="text-[15px] font-semibold tracking-tight text-white transition-colors">
+          <Link href="/" className="text-[15px] font-bold tracking-[-0.02em] text-black hover:text-black/80 transition-all duration-200">
             {siteConfig.brand.name}
           </Link>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-7">
             <a
               href="#portfolio"
-              className="text-[13px] text-white/40 hover:text-white/80 transition-colors duration-200"
+              className="text-[13.5px] text-black/50 hover:text-black/80 transition-colors duration-200"
             >
               Portfolio
             </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className="text-[13px] text-white/40 hover:text-white/80 transition-colors duration-200 cursor-pointer flex items-center gap-1"
+                className="text-[13.5px] text-black/50 hover:text-black/80 transition-colors duration-200 cursor-pointer flex items-center gap-1"
               >
                 Services
                 <svg
@@ -86,12 +86,12 @@ export default function Navbar() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                   >
-                    <div className="bg-[#111214] rounded-xl border border-white/[0.08] p-2 min-w-[200px] shadow-2xl shadow-black/50">
+                    <div className="bg-white rounded-xl border border-black/[0.08] p-2 min-w-[200px] shadow-2xl shadow-black/10">
                       {siteConfig.services.map((s) => (
                         <Link
                           key={s.slug}
                           href={`/services/${s.slug}`}
-                          className="block px-4 py-2.5 text-[13px] text-white/50 hover:text-white/80 hover:bg-white/[0.04] rounded-lg transition-colors duration-200"
+                          className="block px-4 py-2.5 text-[13px] text-black/60 hover:text-black/90 hover:bg-black/[0.03] rounded-lg transition-colors duration-200"
                         >
                           {s.title}
                         </Link>
@@ -104,14 +104,14 @@ export default function Navbar() {
 
             <a
               href="#process"
-              className="text-[13px] text-white/40 hover:text-white/80 transition-colors duration-200"
+              className="text-[13.5px] text-black/50 hover:text-black/80 transition-colors duration-200"
             >
               Process
             </a>
 
             <a
               href="#faq"
-              className="text-[13px] text-white/40 hover:text-white/80 transition-colors duration-200"
+              className="text-[13.5px] text-black/50 hover:text-black/80 transition-colors duration-200"
             >
               FAQ
             </a>
@@ -134,7 +134,7 @@ export default function Navbar() {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="white"
+                stroke="black"
                 strokeWidth="2"
               >
                 <line x1="3" y1="6" x2="21" y2="6" />
