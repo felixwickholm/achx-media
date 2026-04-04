@@ -94,15 +94,11 @@ export const siteConfig = {
 
   // ─── Clients (logo bar) ──────────────────────────────────
   clients: [
-    { name: "WicFlow", logo: "/logos/wicflow.svg" },
-    { name: "Paybase", logo: "/logos/paybase.svg" },
-    { name: "Docustream", logo: "/logos/docustream.svg" },
-    { name: "Shipday", logo: "/logos/shipday.svg" },
-    { name: "Taplio", logo: "/logos/taplio.svg" },
-    { name: "FetchTalent AI" },
-    { name: "LinQfolio" },
-    { name: "Google" },
+    { name: "Linqfolio" },
+    { name: "FetchTalentAI" },
+    { name: "Wicflow", logo: "/logos/wicflow.svg" },
     { name: "Klyara AI", logo: "/logos/kylra.svg" },
+    { name: "Google" },
     { name: "Grok AI" },
   ] as ClientLogo[],
 
