@@ -76,6 +76,7 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
               <video
                 src={video.videoFile}
                 autoPlay
+                muted
                 controls
                 className="w-full h-full bg-black"
               />

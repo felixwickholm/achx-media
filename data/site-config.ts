@@ -262,6 +262,16 @@ export const siteConfig = {
       result: "10K+ reviews",
       description: "SaaS explainer for a portfolio and reviews platform, driving user trust and signups.",
     },
+    {
+      id: "lv-7",
+      title: "AchX Media Showreel",
+      client: "AchX Media",
+      videoFile: "/videos/achx-3.mp4",
+      thumbnail: "/videos/achx-3-thumb.jpg",
+      service: "launch-videos",
+      featured: true,
+      description: "Our own marketing video — showcasing what AchX Media brings to the table for SaaS teams.",
+    },
   ] as PortfolioVideo[],
 
   // ─── Testimonials ────────────────────────────────────────
